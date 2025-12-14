@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login / Sign Up</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom styles for smooth toggle */
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 flex items-center justify-center min-h-screen p-4">
+  <div class="w-full max-w-md bg-gray-800 border border-gray-700 rounded-lg shadow-lg p-6">
+    <div class="text-center mb-6">
+      <h1 id="form-title" class="text-3xl font-bold text-blue-400">Welcome Back</h1>
+      <p id="form-description" class="text-blue-200 mt-1">Sign in to your account</p>
+    </div>
+
+    <!-- Login Form -->
+    <form id="login-form" class="space-y-4">
+      <div>
+        <label for="login-email" class="block text-blue-300 mb-1">Email Address</label>
+        <input
+          id="login-email"
+          name="email"
+          type="email"
+          placeholder="Enter your email"
+          required
+          class="w-full bg-gray-700 text-white placeholder-gray-400 border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        />
+      </div>
+      <div>
+        <label for="login-school" class="block text-blue-300 mb-1">School/College</label>
+        <input
+          id="login-school"
+          name="school"
+          type="text"
+          placeholder="Enter your school or college name"
+          required
+          class="w-full bg-gray-700 text-white placeholder-gray-400 border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        />
+      </div>
+      <div>
+        <label for="login-class" class="block text-blue-300 mb-1">Current Class</label>
+        <input
+          id="login-class"
+          name="currentClass"
+          type="text"
+          placeholder="e.g., 10th Grade, Sophomore, etc."
+          required
+          class="w-full bg-gray-700 text-white placeholder-gray-400 border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        />
+      </div>
+      <div>
+        <label for="login-password" class="block text-blue-300 mb-1">Password</label>
+        <input
+          id="login-password"
+          name="password"
+          type="password"
+          placeholder="Enter your password"
+          required
+          class="w-full bg-gray-700 text-white placeholder-gray-400 border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        />
+      </div>
+      <button
+        type="submit"
+        class="w-full bg-blue-600 text-white font-semibold rounded py-2 hover:bg-blue-700 focus:ring-4 focus:ring-blue-400"
+      >
+        Sign In
+      </button>
+    </form>
+
+    <!-- Sign Up Form -->
+    <form id="signup-form" class="space-y-4 hidden">
+      <div>
+        <label for="signup-email" class="block text-blue-300 mb-1">Email Address</label>
+        <input
+          id="signup-email"
+          name="email"
+          type="email"
+          placeholder="Enter your email"
+          required
+          class="w-full bg-gray-700 text-white placeholder-gray-400 border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        />
+      </div>
+      <div>
+        <label for="signup-school" class="block text-blue-300 mb-1">School/College</label>
+        <input
+          id="signup-school"
+          name="school"
+          type="text"
+          placeholder="Enter your school or college name"
+          required
+          class="w-full bg-gray-700 text-white placeholder-gray-400 border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        />
+      </div>
+      <div>
+        <label for="signup-class" class="block text-blue-300 mb-1">Current Class</label>
+        <input
+          id="signup-class"
+          name="currentClass"
+          type="text"
+          placeholder="e.g., 10th Grade, Sophomore, etc."
+          required
+          class="w-full bg-gray-700 text-white placeholder-gray-400 border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        />
+      </div>
+      <div>
+        <label for="signup-password" class="block text-blue-300 mb-1">Password</label>
+        <input
+          id="signup-password"
+          name="password"
+          type="password"
+          placeholder="Enter your password"
+          required
+          class="w-full bg-gray-700 text-white placeholder-gray-400 border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        />
+      </div>
+      <div>
+        <label for="signup-confirm-password" class="block text-blue-300 mb-1">Confirm Password</label>
+        <input
+          id="signup-confirm-password"
+          name="confirmPassword"
+          type="password"
+          placeholder="Confirm your password"
+          required
+          class="w-full bg-gray-700 text-white placeholder-gray-400 border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        />
+      </div>
+      <button
+        type="submit"
+        class="w-full bg-blue-600 text-white font-semibold rounded py-2 hover:bg-blue-700 focus:ring-4 focus:ring-blue-400"
+      >
+        Create Account
+      </button>
+    </form>
+
+    <div class="mt-4 text-center text-blue-300 text-sm">
+      <span id="toggle-text">Don't have an account? </span>
+      <button
+        id="toggle-button"
+        class="text-blue-400 font-medium underline underline-offset-4 hover:text-blue-500 focus:outline-none"
+      >
+        Sign up
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById("login-form");
+    const signupForm = document.getElementById("signup-form");
+    const toggleButton = document.getElementById("toggle-button");
+    const toggleText = document.getElementById("toggle-text");
+    const formTitle = document.getElementById("form-title");
+    const formDescription = document.getElementById("form-description");
+
+    toggleButton.addEventListener("click", () => {
+      if (loginForm.classList.contains("hidden")) {
+        // Switch to login
+        loginForm.classList.remove("hidden");
+        signupForm.classList.add("hidden");
+        formTitle.textContent = "Welcome Back";
+        formDescription.textContent = "Sign in to your account";
+        toggleText.textContent = "Don't have an account? ";
+        toggleButton.textContent = "Sign up";
+      } else {
+        // Switch to sign up
+        loginForm.classList.add("hidden");
+        signupForm.classList.remove("hidden");
+        formTitle.textContent = "Create Account";
+        formDescription.textContent = "Join our learning community";
+        toggleText.textContent = "Already have an account? ";
+        toggleButton.textContent = "Sign in";
+      }
+    });
+
+    // Optional: Add simple form submit handlers to prevent page reload
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Login form submitted!");
+      // Add your login logic here
+    });
+
+    signupForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Sign up form submitted!");
+      // Add your sign up logic here
+    });
+  </script>
+</body>
+</html>
